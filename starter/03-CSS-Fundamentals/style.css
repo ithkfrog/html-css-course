@@ -1,0 +1,273 @@
+/* Universial selector applies to all element */
+* {
+  /* border-top: 10px solid#1098ad; */
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+  color: #444;
+  border-top: 10px solid#1098ad;
+  position: relative;
+}
+
+/* It can be defined in `body` so all text related default CSS will be applied */
+/* h1,
+h2,
+h3,
+h4,
+p,
+li {
+  font-family: sans-serif;
+  color: #444;
+} */
+
+h1,
+h2,
+h3 {
+  color: #1098ad;
+}
+
+h1 {
+  font-size: 26px;
+  text-transform: uppercase;
+  font-style: italic;
+}
+
+h2 {
+  font-size: 40px;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+h3 {
+  font-size: 30px;
+  margin-bottom: 20px;
+  /* There is collepasing pixel */
+  margin-top: 40px;
+}
+
+h4 {
+  font-size: 20px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+nav {
+  font-size: 18px;
+}
+
+nav a:link {
+  padding-top: 5px;
+  padding-right: 25px;
+  display: inline-block;
+}
+
+article {
+  margin-bottom: 60px;
+}
+
+p {
+  font-size: 22px;
+  line-height: 1.5; /* default is 1 */
+  margin-bottom: 15px;
+}
+
+button {
+  font-size: 22px;
+  padding: 20px;
+  cursor: pointer;
+
+  position: absolute;
+  /* top: 50px;
+    left: 50px; */
+  bottom: 50px;
+  right: 50px;
+}
+
+ul,
+ol {
+  margin-left: 50px;
+  margin-bottom: 20px;
+}
+
+li {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+li:last-child {
+  margin-bottom: 0;
+}
+
+/* Descendent selector */
+/* footer p {
+  font-size: 16px;
+} */
+
+/* HTML element select.
+ The downside is it is couple with HTML structure very 
+ hard to maintain if change structure of HTML
+ 
+ In real world should always use `class` instead of `id`
+ */
+/* Descendent selector */
+/* article header p {
+  font-style: italic;
+} */
+
+/* Identifier selector, ID selector can't be replied*/
+#author {
+  font-style: italic;
+}
+
+#copyright {
+  font-size: 16px;
+}
+
+/* Class selector */
+.container {
+  width: 800px;
+  /* providing left and right auto will auto centre the container */
+  /* margin-left: auto;
+  margin-right: auto; */
+  margin: 0 auto;
+}
+.related-author {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.related-list {
+  list-style: none;
+}
+
+.main-header {
+  background-color: #f7f7f7;
+  padding: 20px 40px;
+  margin-bottom: 60px;
+  height: 80px;
+}
+
+.post-header {
+  margin-bottom: 40px;
+}
+
+.post-img {
+  width: 100%;
+  height: auto;
+}
+
+aside {
+  background-color: #f7f7f7;
+  border-top: 5px solid #1098ad;
+  border-bottom: 5px solid #1098ad;
+  padding: 50px 0;
+  width: 500px;
+}
+
+/* Pseudo class */
+li:first-child {
+  font-weight: bold;
+}
+
+li:last-child {
+  font-style: italic;
+}
+
+/* li:nth-child(2) {
+  color: red;
+} */
+
+li:nth-child(odd) {
+  color: blue;
+}
+
+/* 
+Pseudo-classes with decendent selector 
+works differently, it is better with same markup.
+
+This won't work because in markup the first 
+child of article was  a header, 
+therefore it won't apply the style.
+*/
+article p:first-child {
+  color: red;
+}
+
+/****************************
+ Styling links with Pseudo classes
+ ****************************/
+
+/* Apply to anchor that has a href */
+a:link {
+  color: #1098ad;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #1098ad;
+}
+
+a:hover {
+  color: orangered;
+  font-weight: bold;
+  text-decoration: underline dashed black;
+}
+
+/* This color won't apply because Pseudo takes priorities */
+a {
+  color: red;
+}
+/* When clicking */
+a:active {
+  background-color: black;
+  font-style: italic;
+}
+
+/** Resolving conflicts **/
+/* ID will be last */
+#copyright {
+  color: red;
+}
+
+/* If both classes (copyright and text) been set then will be the last one */
+.copyright {
+  color: blue;
+}
+
+.text {
+  color: yellow;
+}
+
+footer p {
+  color: green;
+}
+
+/** Pseudo elements **/
+h1::first-letter {
+  font-style: normal;
+  margin-right: 5px;
+}
+
+/* Adjacent element */
+h3 + p::first-letter {
+  font-size: 32px;
+}
+
+/* After/Before apply to very first child of an element */
+h2::after {
+  content: "TOP"; /* Mandatory */
+  background-color: #ffe70e;
+  color: #444;
+  font-size: 16px;
+  font-weight: bold;
+  display: inline-block;
+  padding: 5px 10px;
+  position: absolute; /* require H2 position: relative inorder for this element within H2*/
+  top: -15px;
+  right: 0;
+  border-radius: 10px;
+  -webkit-border-radius: 10px; /* older safari, iOS, Andriod */
+}
