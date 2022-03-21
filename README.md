@@ -59,3 +59,18 @@ Use starter code to start each section, and **final code to compare it with your
 ### Q13: Do you accept pull requests?
 
 **A:** No, for the simple reason that I want this repository to contain the _exact_ same code that is shown in the videos. However, please feel free to add an issue if you found one.
+
+# Resources
+
+## Fonts
+
+- https://fonts.google.com
+
+## Color tools
+
+- (Open Color)[https://yeun.github.io/open-color/]
+- (Coolors)[https://coolors.co/]
+
+## Icons
+
+- (Hero icons)[https://heroicons.com/]
